@@ -1,0 +1,14 @@
+|Lab3
+pin_Sa <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+pin_D0 => gdfx_temp0.IN0
+pin_D2 => gdfx_temp0.IN3
+pin_D3 => gdfx_temp0.IN4
+pin_D1 => gdfx_temp0.IN7
+pin_Sb <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+pin_Sc <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+pin_Sd <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+pin_Se <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+pin_Sf <= <GND>
+pin_Sg <= <GND>
+
+
