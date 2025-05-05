@@ -1,0 +1,26 @@
+module room (input logic clk, n, s, e, w, v, reset, output logic s6, win, s5, d, s4, s3, sw, s2, s1, s0);
+
+    logic next_s6, next_s5, next_s3, next_s2, next_s1, next_s0;
+
+    assign next_s6 = reset | (s5 & w) | (~e & s6);
+    assign next_s5 = ( (s6 & e) | (s4 & n) |  (~s & ~w & s5) ) & ~reset
+    assign next_s4 = ( (s5 & s) | (s3 & e) | (~n & ~e & ~w & ~s & s4) ) & ~reset
+    assign next_s3 = ( (s4 & w) | (~e & s3) ) & ~reset
+    assign next_s2 = ( (s4 & s & e) ) & ~reset
+    assign next_s1 = ( (s2 & v) | s1 ) & ~reset
+    assign next_s0 = ( (s2 & ~v) | s0 ) & ~reset
+    
+    d_ff ff6 (.d(next_s6), .clk(clk), .q(s6));
+    d_ff ff5 (.d(next_s5), .clk(clk), .q(s5));
+    d_ff ff4 (.d(next_s4), .clk(clk), .q(s4));
+    d_ff ff3 (.d(next_s3), .clk(clk), .q(s3));
+    d_ff ff2 (.d(next_s2), .clk(clk), .q(s2));
+    d_ff ff1 (.d(next_s1), .clk(clk), .q(s1));
+    d_ff ff0 (.d(next_s0), .clk(clk), .q(s0));
+
+    
+    assign win = s1
+    assign sw = s3
+    assign d = s0
+
+endmodule

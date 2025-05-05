@@ -1,0 +1,7 @@
+module sign_extend(
+    input logic[15:0] Imm. //16 bit
+    output logic[31:0] SignImm //32 bit
+);
+    assign SignImm = {{16{Imm[15]}}, Imm}; //Replicated MSB, to fill in space
+
+endmodule

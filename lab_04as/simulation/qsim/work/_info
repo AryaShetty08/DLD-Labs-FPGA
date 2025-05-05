@@ -1,0 +1,254 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/user/local/lab_04as/simulation/qsim
+vGame
+Z1 !s110 1727887270
+!i10b 1
+!s100 2[Cl=?0jdIJ^iO0m[=NCR3
+I1aO_QHe`kDLCZS5z7oV4e1
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1727887269
+Z3 8lab04_as.vo
+Z4 Flab04_as.vo
+Z5 L0 32
+Z6 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1727887270.074136
+Z7 !s107 lab04_as.vo|
+Z8 !s90 -work|work|lab04_as.vo|
+!i113 1
+Z9 o-work work
+n@game
+vGame_vlg_check_tst
+R1
+!i10b 1
+!s100 _Km[abYV9VK2k@B_`[bT[1
+Ig=KckMLAVANZ:TWn9=gTH0
+R2
+R0
+Z10 w1727887267
+Z11 8WaveformWinGame.vwf.vt
+Z12 FWaveformWinGame.vwf.vt
+L0 68
+R6
+r1
+!s85 0
+31
+Z13 !s108 1727887270.094781
+Z14 !s107 WaveformWinGame.vwf.vt|
+Z15 !s90 -work|work|WaveformWinGame.vwf.vt|
+!i113 1
+R9
+n@game_vlg_check_tst
+vGame_vlg_sample_tst
+R1
+!i10b 1
+!s100 oZKaTaM=_TO7^8T9>?olI1
+IUFH4N3cC7e`HVbT:=:k8P1
+R2
+R0
+R10
+R11
+R12
+Z16 L0 30
+R6
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R9
+n@game_vlg_sample_tst
+vGame_vlg_vec_tst
+R1
+!i10b 1
+!s100 f065NlZTgYGM4>0gBOd3@0
+Ihcn9X]6PEJUgU5jY^U2CA3
+R2
+R0
+R10
+R11
+R12
+L0 433
+R6
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R9
+n@game_vlg_vec_tst
+vroom
+Z17 !s110 1727886886
+!i10b 1
+!s100 G>LQ3UkE0U]F6X^[@J7TZ2
+Ie?gdiZT^PgfPZE5VCHI<71
+R2
+R0
+w1727886885
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+!s108 1727886886.060869
+R7
+R8
+!i113 1
+R9
+vroom_vlg_check_tst
+R17
+!i10b 1
+!s100 S_Ie9fSVPjjEQ0zegYaQC0
+Ib@J__eE_b>d0FX7YEM9ZS3
+R2
+R0
+Z18 w1727886883
+Z19 8Waveformroom.vwf.vt
+Z20 FWaveformroom.vwf.vt
+L0 70
+R6
+r1
+!s85 0
+31
+Z21 !s108 1727886886.081275
+Z22 !s107 Waveformroom.vwf.vt|
+Z23 !s90 -work|work|Waveformroom.vwf.vt|
+!i113 1
+R9
+vroom_vlg_sample_tst
+R17
+!i10b 1
+!s100 AZ;;h:AzgFfhSki=WkndS1
+IZclk]L9zWl3ajSh]LidPU0
+R2
+R0
+R18
+R19
+R20
+R16
+R6
+r1
+!s85 0
+31
+R21
+R22
+R23
+!i113 1
+R9
+vroom_vlg_vec_tst
+R17
+!i10b 1
+!s100 hOUZ1@g=LWNHe[XmK3c:32
+Ij=4Zm`IlPmY8YHkUNl]YR3
+R2
+R0
+R18
+R19
+R20
+L0 408
+R6
+r1
+!s85 0
+31
+R21
+R22
+R23
+!i113 1
+R9
+vsword
+Z24 !s110 1727886484
+!i10b 1
+!s100 IZb`EW27jY>[6I4Z0FAk32
+IAN30]jej=g1KESlLj`BUm0
+R2
+R0
+w1727886483
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+!s108 1727886484.307413
+R7
+R8
+!i113 1
+R9
+vsword_vlg_check_tst
+R24
+!i10b 1
+!s100 KEToBl`zz?9SKN9fl6;KI3
+Ii08_ZFPzl67dU;a5=kIC73
+R2
+R0
+Z25 w1727886481
+Z26 8WaveformSword.vwf.vt
+Z27 FWaveformSword.vwf.vt
+L0 62
+R6
+r1
+!s85 0
+31
+Z28 !s108 1727886484.326650
+Z29 !s107 WaveformSword.vwf.vt|
+Z30 !s90 -work|work|WaveformSword.vwf.vt|
+!i113 1
+R9
+vsword_vlg_sample_tst
+R24
+!i10b 1
+!s100 :lbTVV_UlZ^@<3[JhQb:P0
+I4YZil[fB8:U?fGKmDcM^I1
+R2
+R0
+R25
+R26
+R27
+R16
+R6
+r1
+!s85 0
+31
+R28
+R29
+R30
+!i113 1
+R9
+vsword_vlg_vec_tst
+R24
+!i10b 1
+!s100 o2]WgAeiCTDfE3^<UEOR03
+IDJ373?644@:@DlaPBS43X1
+R2
+R0
+R25
+R26
+R27
+L0 157
+R6
+r1
+!s85 0
+31
+R28
+R29
+R30
+!i113 1
+R9

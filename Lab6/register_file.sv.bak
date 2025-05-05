@@ -1,0 +1,2 @@
+module register_file(input logic clk, rst,
+	input logic[4:0] )

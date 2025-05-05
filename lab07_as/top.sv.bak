@@ -1,0 +1,113 @@
+module top(
+    input logic clk, rst,
+    output logic[31:0] WriteData, //Data to write to memory
+    output logic[31:0] ALUResult,
+    output logic[31:0] ReadData, //Data read from memory
+    output logic[31:0] prode_register_file, //output for pre-lab simulation
+    output logic[6:0] display_led //output for in-lab
+);
+
+    logic[31:0] SignImm;
+    logic[31:0] ALUSrc_out; //output from ALUSrc MUX
+    logic[31:0] MemtoReg_out; //output from MemtoReg MUX
+    logic[4:0] RegDst_out; //output from RegDst MUX
+    logic[31:0] ReadData1;
+
+    logic MemtoReg, MemWrite, ALUSrc, RegDst, RegWrite;
+    logic[2:0] ALUControl;
+
+    logic [31:0] inst_1 = 32'b100011_00000_00001_000000000101;  // Load Data_memory[5] to Register_File[1]
+    //lw $2, 0($0)
+    logic [31:0] inst_2 = 32'b101011_00000_00110_000000000010;  // Store Register_File[6] to Data_memory[2]
+    //sw $2, 4($0)
+    logic[31:0] inst_ex;
+    assign inst_ex = inst_1
+
+    //To set the control signals easier to read opcode
+    always_comb begin
+        case(inst_ex[31:26])
+            6'b100011: begin //for load
+                RegWrite = 1;
+                RegDst = 0;
+                ALUSrc = 1;
+                MemtoReg = 1;
+                MemWrite = 0;
+                ALUControl = 3'b010;
+            end
+            6'b101011: begin  //for save 
+                RegWrite = 0;
+                RegDst = 0;  // Don't care
+                ALUSrc = 1;
+                MemtoReg = 0;  // Don't care
+                MemWrite = 1;
+                ALUControl = 3'b010; 
+            end
+            default: begin
+                RegWrite = 0;
+                RegDst = 0;
+                ALUSrc = 0;
+                MemtoReg = 0;
+                MemWrite = 0;
+                ALUControl = 3'b000;
+            end
+        endcase
+    end
+
+    register_file r_f(
+        .clk(clk),
+        .rst(rst),
+        .A1(inst_ex[25:21]),.A2(inst_ex[20:16]),.A3(ReadDst_out), //rs, rt, write register
+        .WD3(MemtoReg_out), //write data
+        .WE3(RegWrite),
+        .RD1(ReadData1),
+        .RD2(WriteData),
+        .prode(prode_register_file)
+    );
+
+    data_memory data_mem(
+        .clk(clk),
+        .rst(rst),
+        .A(ALUResult), //address
+        .WD(WriteData),
+        .WE(MemWrite),
+        .RD(ReadData)
+    );
+
+    sign_extend sign_ext(
+        .Imm(inst_ex[15:0]),
+        .SignImm(SignImm)
+    );
+
+    MUX_MemtoReg mux_memtoreg(
+        .ALUResult(ALUResult),
+        .RD(ReadData),
+        .MemtoReg(MemtoReg),
+        .MemtoReg_out(MemtoReg_out)
+    );
+
+    MUX_ALUSrc mux_alusrc(
+        .RD2(WriteData),
+        .SignImm(SignImm),
+        .ALUSrc(ALUSrc),
+        .ALUSrc_out(ALUSrc_out)
+    );
+
+    MUX_RegDst mux_regdst(
+        .rt(inst_ex[20:16]),
+        .rd(inst_ex[15:11]),
+        .RegDst(RegDst),
+        .ReadDst_out(ReadDst_out)
+    );
+
+    ALU t1(
+        .SrcA(ReadData1),
+        .SrcB(ALUSrc_out),
+        .ALUControl(ALUControl),
+        .ALUResult(ALUResult)
+    );
+
+    display t2(.data_in(prode_register_file), 
+    .segments(display_led));
+
+
+endmodule
